@@ -34,12 +34,14 @@ def main(input):
         return
 
     # ready to attempt to parse csv
-    with open(input[1], newline='', encoding="utf-8", errors='replace') as csv_file:
+    with open(input[1], newline='', encoding='utf-8', errors='replace') as csv_file:
 
         csv_data = csv.DictReader(csv_file)
 
+        # print csv headers
         print(",".join(csv_data.fieldnames))
 
+        # data as OrderedDict
         for row in csv_data:
             # Timestamp: convert to ISO-8601
             # Timestamp: convert from PST to EST
